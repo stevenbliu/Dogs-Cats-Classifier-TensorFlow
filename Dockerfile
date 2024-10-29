@@ -12,7 +12,7 @@ COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Run your Python script when the container launches
-# CMD ["python", "./your_script.py"]
+CMD ["python", "./script.py"]
 
 # terminal command: docker build -t your_image_name .
 # 
