@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  etl:
+    build:
+      context: .
+    container_name: etl_pipeline
+    depends_on:
+      - postgres
+    environment:
+      - API_KEY=your_api_key
+    volumes:
+      - ./logs:/app/logs
+  postgres:
+    image: postgres:13
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: weather_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

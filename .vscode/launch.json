@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Python: Docker",
+        "type": "python",
+        "request": "launch",
+        "module": "your_module_name",  // Replace with your main module or script
+        "justMyCode": true,
+        "env": {
+          "PYTHONPATH": "/app"  // Path to your app inside the container
+        },
+        "dockerOptions": {
+          "dockerFile": "Dockerfile",
+          "context": ".",
+          "target": "your_target" // Optional: specify if you have multiple build stages
+        }
+      }
+    ]
+  }
+  
